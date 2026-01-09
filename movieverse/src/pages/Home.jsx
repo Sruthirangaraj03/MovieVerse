@@ -68,7 +68,7 @@ const Home = ({ user, openAuthModal }) => {
   // Replace 'rosini@example.com' with your actual email or user ID
   const userId = 'rosini@example.com'; // or user._id if using MongoDB ID
 
-  fetch(`http://localhost:5000/api/favorites/${userId}`)
+  fetch(`https://movieverse-backend-j0j6.onrender.com/api/favorites/${userId}`)
     .then(r => r.json())
     .then(d => {
       console.log('=== ALL FAVORITES ===');

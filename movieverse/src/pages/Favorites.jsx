@@ -30,7 +30,7 @@ const Favorites = ({ user, openAuthModal }) => {
       
       console.log('📥 Fetching favorites for userId:', userId);
       
-      const response = await fetch(`http://localhost:5000/api/favorites/${userId}`);
+      const response = await fetch(`https://movieverse-backend-j0j6.onrender.com/api/favorites/${userId}`);
       
       if (!response.ok) {
         throw new Error('Failed to fetch favorites');
@@ -74,7 +74,7 @@ const Favorites = ({ user, openAuthModal }) => {
       
       console.log('🗑️ Removing favorite:', { userId, movieId });
       
-      const response = await fetch(`http://localhost:5000/api/favorites/${userId}/${movieId}`, {
+      const response = await fetch(`https://movieverse-backend-j0j6.onrender.com/api/favorites/${userId}/${movieId}`, {
         method: 'DELETE'
       });
 
@@ -104,7 +104,7 @@ const Favorites = ({ user, openAuthModal }) => {
       
       console.log('🗑️ Clearing all favorites for userId:', userId);
       
-      const response = await fetch(`http://localhost:5000/api/favorites/${userId}/clear`, {
+      const response = await fetch(`https://movieverse-backend-j0j6.onrender.com/api/favorites/${userId}/clear`, {
         method: 'DELETE'
       });
 

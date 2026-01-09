@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { FavoritesProvider } from './context/FavoritesContext'  // ✅ IMPORT CONTEXT
 
 // Components
-import Navbar from './components/Navbar'
+import Navbar from './components/NavBar'
 import Home from './pages/Home'
 import Favorites from './pages/Favorites'
 import HowItWorks from './pages/HowItWorks'
@@ -115,7 +115,7 @@ function App() {
     
     try {
       const userId = user._id || user.id || user.email
-      const response = await fetch(`http://localhost:5000/api/favorites/${userId}`)
+      const response = await fetch(`https://movieverse-backend-j0j6.onrender.com/api/favorites/${userId}`)
       
       if (response.ok) {
         const data = await response.json()

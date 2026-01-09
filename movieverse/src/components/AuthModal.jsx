@@ -68,7 +68,7 @@ const AuthModal = ({ isOpen, mode, onClose, onAuthSuccess }) => {
 
       console.log('📤 Sending request to:', endpoint, payload)
 
-      const response = await fetch(`http://localhost:5000${endpoint}`, {
+      const response = await fetch(`https://movieverse-backend-j0j6.onrender.com${endpoint}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

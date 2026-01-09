@@ -75,7 +75,7 @@ export function FavoritesProvider({ children, user, openAuthModal }) {
       const userId = user._id || user.id || user.email;
       console.log('📥 Fetching favorites for user:', userId);
 
-      const response = await fetch(`http://localhost:5000/api/favorites/${userId}`);
+      const response = await fetch(`https://movieverse-backend-j0j6.onrender.com/api/favorites/${userId}`);
       
       if (response.ok) {
         const data = await response.json();
@@ -189,7 +189,7 @@ export function FavoritesProvider({ children, user, openAuthModal }) {
       setLoading(true);
       console.log('➕ Adding to favorites:', { userId, movieId, title: normalized.Title });
 
-      const response = await fetch('http://localhost:5000/api/favorites', {
+      const response = await fetch('https://movieverse-backend-j0j6.onrender.com/api/favorites', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -241,7 +241,7 @@ export function FavoritesProvider({ children, user, openAuthModal }) {
       setLoading(true);
       console.log('➖ Removing from favorites:', { userId, movieId });
 
-      const response = await fetch(`http://localhost:5000/api/favorites/${userId}/${movieId}`, {
+      const response = await fetch(`https://movieverse-backend-j0j6.onrender.com/api/favorites/${userId}/${movieId}`, {
         method: 'DELETE'
       });
 
@@ -292,7 +292,7 @@ export function FavoritesProvider({ children, user, openAuthModal }) {
 
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:5000/api/favorites/${userId}/clear`, {
+      const response = await fetch(`https://movieverse-backend-j0j6.onrender.com/api/favorites/${userId}/clear`, {
         method: 'DELETE'
       });
 
